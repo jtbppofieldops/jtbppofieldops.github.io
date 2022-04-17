@@ -1,37 +1,91 @@
-## Welcome to GitHub Pages
+<html>
+<head>
+<title>PPO Daily Attendance List</title>
+<meta http-equiv = "refresh" content = "30; url = external.html" />
+</head>
+<body>
 
-You can use the [editor on GitHub](https://github.com/jtbppofieldops/jtbppofieldops.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+<div id="datacontainer" style="position:absolute;left:1px;top:10px;width:100%" onMouseover="scrollspeed=cache" onMouseout="scrollspeed=cache">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<!-- ADD YOUR SCROLLER CONTENT INSIDE HERE -->
+<style>
+#myIframe {
+  width: 1920px;
+  height: 2000px;
+  display: block;
+  margin: 0 auto;
+  border: 0px;
+  text-align:center;
+}
 
-### Markdown
+#myIframe {
+  zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #myIframe {
+    zoom: 1;
+  }
+}
+</style>
 
-```markdown
-Syntax highlighted code block
+<iframe id="myIframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTDoEWkrDC7iVZG3I1SlxPEhfnN8E-rYDSeoVJu5k4R5EVomlJnqNDyHa6PsFqlVte2JP3-UW6GuRuq/pubhtml?gid=1731893939&amp;" height="2500px" align="middle"></iframe>
 
-# Header 1
-## Header 2
-### Header 3
+<!-- END SCROLLER CONTENT -->
 
-- Bulleted
-- List
+</div>
+<img src="file:///C:/Users/gumel/Pictures/Pertamina.png"/>
+<script type="text/javascript">
 
-1. Numbered
-2. List
+/***********************************************
+* IFRAME Scroller script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
 
-**Bold** and _Italic_ and `Code` text
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=1
 
-[Link](url) and ![Image](src)
-```
+//Specify intial delay before scroller starts scrolling (in miliseconds):
+var initialdelay=5000
+var node=0
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+function initializeScroller(){
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top="5px"
+setTimeout("getdataheight()", initialdelay)
+}
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jtbppofieldops/jtbppofieldops.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+function getdataheight(){
+thelength=dataobj.offsetHeight
+if (thelength==0)
+setTimeout("getdataheight()",30)
+else
+scrollDiv()
+}
 
-### Support or Contact
+function scrollDiv(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed+"px"
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top="5px"
+setTimeout("scrollDiv()",30)
+}
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+if (window.addEventListener)
+window.addEventListener("load", initializeScroller, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializeScroller)
+else
+window.onload=initializeScroller
+
+</script>
+
+</body>
+</html>

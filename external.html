@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>PPO Peka Dashboard</title>
+<meta http-equiv = "refresh" content = "30; url = ERT.html" />
+</head>
+<body>
+
+<div id="datacontainer" style="position:absolute;left:1px;top:10px;width:100%" onMouseover="scrollspeed=cache" onMouseout="scrollspeed=cache">
+<!-- ADD YOUR SCROLLER CONTENT INSIDE HERE -->
+<style>
+#myIframe1 {
+  width: 1000%;
+  border: 0px;
+}
+
+#myIframe1 {
+  zoom: 0.8;
+  -moz-transform: scale(0.8);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.8);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.8);
+  -webkit-transform-origin: 0 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #myIframe1 {
+    zoom: 1;
+  }
+}
+</style>
+
+<iframe id="myIframe1" src="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vQkI3zQh5Y3PkLwIoQ7-Uo418fo5vJ7LhST6pjNji4z1rmENK8l6eu9Vesom0HQh5z6EriOkU--MgF6/pubhtml" height="4600px" align="middle"></iframe>
+
+<!-- END SCROLLER CONTENT -->
+
+</div>
+<img src="file:///C:/Users/gumel/Pictures/Pertamina.png"/>
+
+<script type="text/javascript">
+
+/***********************************************
+* IFRAME Scroller script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=1
+
+//Specify intial delay before scroller starts scrolling (in miliseconds):
+var initialdelay=5000
+var node=0
+
+
+function initializeScroller(){
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top="5px"
+setTimeout("getdataheight()", initialdelay)
+}
+
+function getdataheight(){
+thelength=dataobj.offsetHeight
+if (thelength==0)
+setTimeout("getdataheight()",30)
+else
+scrollDiv()
+}
+
+function scrollDiv(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed+"px"
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top="5px"
+setTimeout("scrollDiv()",30)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializeScroller, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializeScroller)
+else
+window.onload=initializeScroller
+
+</script>
+
+</body>
+</html>
